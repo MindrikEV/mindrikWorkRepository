@@ -20,17 +20,16 @@
     echo "Сумма нечетных элементов =  $sumOfOdd в интервале (от -74 до 48) <br>";
     echo "Среднее значение элементов кратных 2-м = $averageEven <br>";
 
-    $simple = 0;
+$summOfSimple = 0;
 
-    for($i=2;$i<=48;$i++){
+    er:
+    for($i=3;$i<=48;$i++){
         for($j=2;$j<$i;$j++){
             if($i%$j==0) {
-                break 1;
-            } else {
-               echo $i;
-               break 1;
-                //$simple++;
+                goto er;
             }
+            echo $i;
+            $summOfSimple++;
         }
     }
-    //echo $simple;
+    echo "Количество простых чисел в указанном диапазоне: ".$summOfSimple;

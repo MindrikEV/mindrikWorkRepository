@@ -1,8 +1,8 @@
 <?php
 
-$arr2 = array('7','7','7');
+//$arr2 = [7,7,7,[2,2,2],1,1,[2,2,[3,[4,4,4],3]]];
 
-arrayPrinter($arr=array('2','3','4','5','6','7','8','9',$arr2),$ots='-');
+arrayPrinter($arr=[2,3,4,5,6,7,8,9,[2,2,2],1,1,[2,2,[3,[4,4,4],3]]],$ots='-');
 
 function arrayPrinter($array,$ots){
 
