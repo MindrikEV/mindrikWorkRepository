@@ -14,7 +14,15 @@
     <div class="row">
         <div class="col-md-4">LOGO</div>
         <div class="col-md-4">Name + time</div>
-        <div class="col-md-4">login/password</div>
+        <div class="col-md-4">login/password
+
+            <form method="POST" action="worker.php" enctype="multipart/form-data">
+                <input type="text" name="title">
+                <input type="file" name="file">
+                <input type="submit" name="Send">
+            </form>
+
+        </div>
     </div>
 </div>
 
