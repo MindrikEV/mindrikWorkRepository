@@ -1,9 +1,7 @@
 <?php
 include_once "func.php";
-//include_once "/tasks/task3/task3_array.php";
 
 pre($_FILES);
-pre($_POST);
 
 
 $types=["image/jpeg","image/png","image/jpg"];
@@ -30,7 +28,7 @@ $logs=[];
 // Make and check new path
     $date = new \DateTime();
     $path = $_SERVER['CONTEXT_DOCUMENT_ROOT']."/uploads/".$date->format('Y/m/d/i/');
-    echo $path;
+    //echo $path;
     if(file_exists($path)){
         $logs[] = '4 Stage - Done (Path exist)'.$path;
     } else {
@@ -38,12 +36,15 @@ $logs=[];
         $logs[] = '4 Stage - Folder was not exist, but now all OK!'.$path;
     }
 // Copy file
-    $name = substr($_FILES['file']['name'],strrpos($_FILES['file']['name']), '.');
+    $name = $date->format('mdHis').substr($_FILES['file']['name'],strrpos($_FILES['file']['name'],'.'));
     if(file_exists($name)){
         echo $logs[] = 'Error! File exist.';
     } else {
-        copy($_FILES['file']['tmp_name'],$path."/".$name);
+        //echo $name;
+        copy($_FILES['file']['tmp_name'],$path.$name);
     }
 // Print log
+    echo "<br>";
+    echo "LOG:";
     echo "<br>";
     pre($logs);
