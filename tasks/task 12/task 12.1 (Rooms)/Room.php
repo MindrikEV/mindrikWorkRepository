@@ -26,6 +26,14 @@ class Room
         $this->light = $light;
     }
 
+    function getLightStatus(){
+        if($this->light) {
+            echo "Light is ON!";
+        } else {
+            echo "Light is OFF!";
+        }
+    }
+
     function addHuman($human){
         $this->humans[] = $human;
     }
@@ -40,11 +48,7 @@ class Room
 
     function getStatus(){
         echo "In the room ".count($this->humans)."<br>";
-        if($this->light) {
-            echo "Light is ON!";
-        } else {
-            echo "Light is OFF!";
-        }
+        $this->getLightStatus();
     }
 
 
