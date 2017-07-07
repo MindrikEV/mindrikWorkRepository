@@ -46,5 +46,5 @@ class tree
         $this->branches[] = $branch;
     }
 
-    
+
 }
