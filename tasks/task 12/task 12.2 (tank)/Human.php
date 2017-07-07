@@ -5,6 +5,12 @@ class Human
     private $name;
     private $sex;
 
+    function __construct($name,$sex)
+    {
+        $this->name = $name;
+        $this->sex = $sex;
+    }
+
     public function getName()
     {
         return $this->name;
